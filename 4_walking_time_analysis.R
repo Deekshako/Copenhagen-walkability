@@ -2,7 +2,7 @@
 ##
 ## Run walking accessibility analysis
 ##
-## Created for Copenhagen by Deeksha, Yichen, and Chaitali
+## Created for Copenhagen by Deeksha, Yichen, and Chaitali.Methodology adapted from Nathaniel Henry
 ## Purpose: Estimate walking time from each block in a city to various destination types
 ##
 ## Before running (see README.md for details):
