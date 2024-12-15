@@ -1,6 +1,6 @@
-# 15-minute city visualization
+# 15-minute city visualization for Copenhagen
 
-The files in this folder create an interactive map showing walking times to different combinations of amenities across a city.
+The files in this folder create an interactive map showing walking times to different combinations of amenities across the city. The methodology has been adapted from Henry Nathaniel's 15 min city visualisation for seattle.
 
 ## Files
 
