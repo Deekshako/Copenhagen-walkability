@@ -2,7 +2,7 @@
 ##
 ## Process parks data from WFS URL and convert geometries to points
 ##
-## Created for Copenhagen by Deeksha, Yichen, and Chaitali
+## Created for Copenhagen by Deeksha, Yichen, and Chaitali.Methodology adapted from Nathaniel Henry
 ## Purpose: Download and process parks data from a WFS service
 ##
 ## Note: The script fetches park data from a WFS service, processes geometries, and 
