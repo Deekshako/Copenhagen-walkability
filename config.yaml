@@ -1,0 +1,45 @@
+project_settings:
+  state_name: "Region Hovedstaden"  # This is the region encompassing Copenhagen
+  county_name: "København"  # Use "København" or "Copenhagen Municipality" if applicable
+  subset_to_city: TRUE
+  city_name: "Copenhagen"
+  working_crs: '+proj=utm +zone=32 +datum=WGS84 +units=m'  # UTM zone for Copenhagen
+  remove_water_bodies: TRUE
+  water_body_area_threshold: 0.25 # Smallest water bodies to remove
+  subset_to_populated_blocks: TRUE
+  min_block_size: 100
+  simplify_tolerance: 10
+  buffer: 2500 # Search for potential destinations this far outside the area
+  census_year: 2020 # Relevant for pulling US Census populations
+  park_min_size_sqft: 20000 # Always defined in square feet. Set as 0 to keep all parks
+  r5_mem_gb: 5
+  viz_starting_zoom_level: 11
+
+directories:
+  raw_data: "E:/IAAC/Thesis/Henry Spatial Analysis/Copenhagen walkability/raw_data"
+  prepared_data: "E:/IAAC/Thesis/Henry Spatial Analysis/Copenhagen walkability/prepared_data"
+  results: "E:/IAAC/Thesis/Henry Spatial Analysis/Copenhagen walkability/results"
+
+download_paths:
+  osm_extract: "https://download.geofabrik.de/europe/denmark-latest.osm.pbf"  # URL for bulk OSM data
+  osm_extract_size: 300000000  # Example size in bytes; update with the actual size of the file
+  overpass_api_endpoint: "https://overpass-api.de/api/interpreter"
+  copenhagen_parks: 'https://wfs-kbhkort.kk.dk/k101/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=k101:park_groent_omr_oversigtskort&outputFormat=json&SRSNAME=EPSG:4326&MaxFeatures=300'
+  copenhagen_bus_stops: 'https://wfs-kbhkort.kk.dk/k101/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=k101:bussluse_omraade&outputFormat=json&SRSNAME=EPSG:4326'
+  copenhagen_libraries: 'https://wfs-kbhkort.kk.dk/k101/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=k101:biblioteker&outputFormat=json&SRSNAME=EPSG:4326'
+
+osm_destination_queries:
+  'Supermarkets': ['shop=supermarket']
+  'Coffee shops': ['amenity=cafe']
+  'Pubs': ['amenity=pub']
+  'Schools': ['amenity=school']
+  'Banks': ['amenity=bank']
+  'Clinics': ['amenity=clinic']
+  'Pharmacies': ['amenity=pharmacy']
+  'Post Offices': ['amenity=post_office']
+  'Police Stations': ['amenity=police']
+
+elevation_raster_settings:
+  z: 13
+  clip: 'bbox'
+  neg_to_na: TRUE
